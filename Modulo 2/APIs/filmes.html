@@ -1,48 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" 
-rel="stylesheet">
-<meta charset="utf-8">
-<title>Filmes</title>
+<meta charset="UTF-8" />
+<title>Filmes do Trindex</title>
 <style>
-    
-} 
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #0b0f19;
+    color: #e0e6f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 40px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  /* Triângulo torto (logo) */
+  .logo-triangle {
+    width: 40px;
+    height: 40px;
+    background-color: #00aaff;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transform: rotate(15deg);
+    box-shadow: 0 0 10px #00aaffaa;
+  }
+
+  .logo-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00aaff;
+    user-select: none;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #00aaff;
+    text-transform: capitalize;
+    border-bottom: 3px solid #00aaff;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  /* Grid para os filmes */
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  /* Card individual */
+  .movie-card {
+    background-color: #141b2e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.6);
+  }
+
+  /* Pôster */
+  .movie-poster {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #00aaff;
+  }
+
+  /* Título do filme */
+  .movie-title {
+    padding: 10px 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #cfd8f9;
+    text-align: center;
+  }
+
+  /* Scroll personalizado */
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #00aaff;
+    border-radius: 10px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #0b0f19;
+  }
+
+  /* Responsivo */
+  @media (max-width: 480px) {
     body {
-            background-color: rgb(255, 154, 3)
-        }
-        h1 {
-            color: rgb(24, 211, 158);
-        }
-        h2 {
-            color: rgb(153, 0, 255)
-        }    
-        </style>
-    <title>Filmes</title>
+      padding: 10px 15px;
+    }
+
+    h1 {
+      font-size: 2rem;https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.papodecinema.com.br%2Ffilmes%2Fdrive-my-car%2F&psig=AOvVaw2g15VGcXpuIOpRlh_HVVjH&ust=1758889372330000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiC8bXz848DFQAAAAAdAAAAABAJ
+    }
+
+    .movie-poster {
+      height: 200px;
+    }
+  }
+</style>
 </head>
-
-
 <body>
-    <div>
-    <h1>drama</h1>
-    <h2>Ainda Estou Aqui</h2>
-    <h2>O Poderoso Chefão</h2>
-    <h2>Ela</h2>
-    <h1>comédia</h1>
-    <h2>Tempos Modernos</h2>
-    <h2>American Pie</h2>
-    <h2>Dr. Dolittle</h2>
-    <h1>policial</h1>
-    <h2>O Exterminador do Futuro</h2>
-    <h2>O Procurado</h2>
-    <h2>Velozes e Furiosos</h2>
-    <h1>guerra</h1>
-    <h2>Rambo</h2>
-    <h2>1917</h2>
-    <h2>Até o Último Homem</h2>
-</body>
 
-</html>
+<header>
+  <div class="logo-triangle"></div>
+  <div class="logo-text">Trindex</div>
+</header>
+
+<!-- Drama -->
+<h1>drama</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://tse4.mm.bing.net/th/id/OIP.1zmIGkdoZvoU3IW14KZkkgHaK_?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ainda Estou Aqui" />
+    <div class="movie-title">Ainda Estou Aqui</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="O Poderoso Chefão" />
+    <div class="movie-title">O Poderoso Chefão</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://vejasp.abril.com.br/wp-content/uploads/2016/12/242683.jpeg?quality=70&strip=info&w=418&w=636" alt="Ela" />
+    <div class="movie-title">Ela</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://www.themoviedb.org/t/p/original/u9qfAIKowlzVxrGiKG9XXptgc63.jpg" alt="Drive My Car" />
+    <div class="movie-title">Drive My Car</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/original/19aeBWMyI8nZczAAbcF1oMUZLMk.jpg" alt="A favorita" />
+    <div class="movie-title">A favorita</div>
+  </div>
+</div>
+
+<!-- Comédia -->
+<h1>comédia</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://media.fstatic.com/zXMckBHVw9MUAjLsm89J4JiwYNQ=/fit-in/290x478/smart/media/movies/covers/2018/04/S_997801-MLB20400842582_082015-O_zhaCGQ4.jpg" alt="Tempos Modernos" />
+    <div class="movie-title">Tempos Modernos</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/original/xc4niCywuOkQb8wAZLFJG8fBsYa.jpg" alt="American Pie" />
+    <div class="movie-title">American Pie</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://tse4.mm.bing.net/th/id/OIP.ITuwrLoekQD4krAh9lvqjAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dr. Dolittle" />
+    <div class="movie-title">Dr. Dolittle</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://tse4.mm.bing.net/th/id/OIP.7brjVu5m7eErbVOZQHtuigHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Big" />
+    <div class="movie-title">Big</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://www.themoviedb.org/t/p/original/iGIjksGc9Ud5owXwtVvPih6NJN6.jpg" alt="Elf" />
+    <div class="movie-title">Elf</div>
+  </div>
+</div>
+
+<!-- Policial -->
+<h1>policial</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/cnVVPXzRmtz6RbErWqu23jQJyxh.jpg" alt="O Exterminador do Futuro" />
+    <div class="movie-title">O Exterminador do Futuro</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg" alt="O Procurado" />
+    <div class="movie-title">O Procurado</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/2EewmxXe72ogD0EaWM8gqa0cc7q.jpg" alt="Velozes e Furiosos" />
+    <div class="movie-title">Velozes e Furiosos</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/8QhSx3jvYZJQxnGvewvHksC0m0i.jpg" alt="A Lei é Para Todos" />
+    <div class="movie-title">A Lei é Para Todos</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/1qUMkkQPHv6XvFzETTYBUiqISJM.jpg" alt="DNA do Crime" />
+    <div class="movie-title">DNA do Crime</div>
+  </div>
+</div>
+
+<!-- Guerra -->
+<h1>guerra</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/lobL1cQ7ZXmAuG6c7Q4KjyGh7CX.jpg" alt="Rambo" />
+    <div class="movie-title">Rambo</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/ab6Rsk1r8WW20UKGQSNh0fH88g1.jpg" alt="1917" />
+    <div class="movie-title">1917</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://br.web.img3.acsta.net/pictures/16/11/21/15/29/457312.jpg" alt="Até o Último Homem" />
+    <div class="movie-title">Até o Último Homem</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/lzrA5HjuuDTHtq6U9fLB3syZ6pa.jpg" alt="O Pianista" />
+    <div class="movie-title">O Pianista</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/d4GYV26AMMIPKOnDi2tw7scMIZq.jpg" alt="A Vida é Bela" />
+    <div class="movie-title">A Vida é Bela</div>
+  </div>
+</div>
+
+<!-- Terror -->
+<h1>terror</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/2qAYehPLMlG6w9Mi9XgrWcJU1j8.jpg" alt="Terrifier 1" />
+    <div class="movie-title">Terrifier 1</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/79ZxVTZ48FiTkMl7qXou6YFrs0J.jpg" alt="Terrifier 2" />
+    <div class="movie-title">Terrifier 2</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/5g5qODdAVkpQ89sZuCmXZR1WgTr.jpg" alt="Terrifier 3" />
+    <div class="movie-title">Terrifier 3</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/jtePwr0d7ZtrqWVKFXbnV5G6ieT.jpg" alt="Brinquedo Assassino" />
+    <div class="movie-title">Brinquedo Assassino</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/f1JCDdwJdLk8Z82xEy6Nm0YVjqM.jpg" alt="Corra" />
+    <div class="movie-title">Corra</div>
+  </div>
+</div>
+
+<!-- Ação -->
+<h1>ação</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/4m2s3m8E6uWkjcZGTs18gLRPIpQ.jpg" alt="Missão Impossível" />
+    <div class="movie-title">Missão Impossível</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/7Z2NkkZ8wv8gExJ5tGBZVqxDP2b.jpg" alt="Bailarina: Do Universo de John Wick" />
+    <div class="movie-title">Bailarina: Do Universo de John Wick</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/lTx3G6h2ks2knxRH2Y6LHJ0uU4i.jpg" alt="Deadpool 2" />
+    <div class="movie-title">Deadpool 2</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg" alt="Shazam" />
+    <div class="movie-title">Shazam</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/qdltD7m9wkh48B2d2Uq3t6TsVQU.jpg" alt="Esquadrão Suicida" />
+    <div class="movie-title">Esquadrão Suicida</div>
+  </div>
+</div>
+
+<!-- Ficção Científica -->
+<h1>ficção científica</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/9z1GcaPM1Btcc4sfPucAoyp6xq1.jpg" alt="Um Lugar Silencioso: Dia Um" />
+    <div class="movie-title">Um Lugar Silencioso: Dia Um</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/8UQ5GmqUzCvsG7U2n9ll1oX0fQ6.jpg" alt="Tudo em Todo Lugar ao Mesmo Tempo" />
+    <div class="movie-title">Tudo em Todo Lugar ao Mesmo Tempo</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" alt="Duna" />
+    <div class="movie-title">Duna</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" alt="Distrito 9" />
+    <div class="movie-title">Distrito 9</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/sVGEJqbYMSbQZlmjBPtt7yAmz3d.jpg" alt="Alien, o Oitavo Passageiro" />
+    <div class="movie-title">Alien, o Oitavo Passageiro</div>
+  </div>
+</div>
+
+<!-- Animação -->
+<h1>animação</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg" alt="Toy Story: Um Mundo de Aventuras" />
+    <div class="movie-title">Toy Story: Um Mundo de Aventuras</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/z7XBNPLDQSEqK8yHGlZh98SeJ8i.jpg" alt="Detona Ralph" />
+    <div class="movie-title">Detona Ralph</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg" alt="Frozen" />
+    <div class="movie-title">Frozen</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/hQ2MRqTGO6XWqBqEUw1PKVHzP5h.jpg" alt="Rio" />
+    <div class="movie-title">Rio</div>
+  </div>
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/3k2iPk1sh1JD6R0D9xdIvhxzWoi.jpg" alt="Os Simpsons - O Filme" />
+    <div class="movie-title">Os Simpsons - O Filme</div>
+  </div>
+</div>
+
+<!-- Fantasia -->
+<h1>fantásia</h1>
+<div class="movie-grid">
+  <div class="movie-card">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/hLT5ROp7Q5lM8
